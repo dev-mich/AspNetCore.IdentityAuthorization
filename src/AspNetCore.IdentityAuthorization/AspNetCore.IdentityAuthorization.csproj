@@ -2,6 +2,10 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
+    <Authors>Giacomo Michelon</Authors>
+    <Company>Udressy</Company>
+    <RepositoryUrl>https://github.com/dev-mich/AspNetCore.IdentityAuthorization</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/dev-mich/AspNetCore.IdentityAuthorization</PackageProjectUrl>
   </PropertyGroup>
 
   <ItemGroup>
