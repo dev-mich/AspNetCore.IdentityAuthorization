@@ -29,7 +29,14 @@ namespace AspNetCore.IdentityAuthorization.Infrastructure
 
             var client = new HttpClient();
 
-            var response = await client.GetDiscoveryDocumentAsync(_options.Authority);
+            var response = await client.GetDiscoveryDocumentAsync(new DiscoveryDocumentRequest
+            {
+                Address = _options.Authority,
+                Policy = new DiscoveryPolicy
+                {
+                    RequireHttps = _options.RequireHttpsAuthority
+                }
+            });
 
             // cache response
             _discoveryInfo = response;
