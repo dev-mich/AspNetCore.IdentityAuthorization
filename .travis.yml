@@ -1,0 +1,15 @@
+language: csharp
+mono: none
+os: linux
+dist: bionic
+dotnet: 2.2
+script:
+- dotnet build -c Release
+- dotnet test --filter AspNetCore.IdentityAuthorization.Test
+- dotnet pack -c Release
+deploy:
+  skip_cleanup: true
+  provider: script
+  script: dotnet nuget push src/AspNetCore.IdentityAuthorization/bin/Release/AspNetCore.ScopeValidation.*.nupkg --source "https://api.nuget.org/v3/index.json" --api-key $NUGET_API_KEY
+  on:
+    branch: master
