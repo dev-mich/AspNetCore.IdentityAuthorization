@@ -10,6 +10,6 @@ script:
 deploy:
   skip_cleanup: true
   provider: script
-  script: dotnet nuget push src/AspNetCore.IdentityAuthorization/bin/Release/AspNetCore.ScopeValidation.*.nupkg --source "https://api.nuget.org/v3/index.json" --api-key $NUGET_API_KEY
+  script: dotnet nuget push src/AspNetCore.IdentityAuthorization/bin/Release/AspNetCore.IdentityAuthorization.*.nupkg --source "https://api.nuget.org/v3/index.json" --api-key $NUGET_API_KEY
   on:
     branch: master
